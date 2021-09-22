@@ -725,6 +725,12 @@ li.menu-item .nav-label.sale-label::before{
 .primary{
 	position: relative;
 }
+
+.primary-nav-section .primary {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .primary-nav-section .primary>.menu-item{
 	display: block;
 	float: left;
