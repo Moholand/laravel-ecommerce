@@ -36,14 +36,12 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="تماس با ما: 2587894-021" href="#" ><span>تماس با ما: 2587894-021</span><span class="icon label-before fa fa-mobile"></span></a>
 								</li>
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
-								<li class="menu-item" ><a title="Register or Login" href="login.html">Login</a></li>
-								<li class="menu-item" ><a title="Register or Login" href="register.html">Register</a></li>
 								<li class="menu-item lang-menu menu-item-has-children parent">
 									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
@@ -67,6 +65,48 @@
 										</li>
 									</ul>
 								</li>
+								
+								@if(Route::has('login'))
+									@auth
+										@if(Auth::user()->utype === 'ADM')
+											<!-- Admin -->
+											<li class="menu-item menu-item-has-children parent" >
+												<a title="حساب کاربری" href="#">حساب کاربری ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+												<ul class="submenu curency" >
+													<li class="menu-item" >
+														<a title="Dashboard" href="{{ route('admin.dashboard') }}">پیشخوان</a>
+													</li>
+													<li class="menu-item" >
+														<a title="Dashboard" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
+													</li>
+													<form id="logout-form" action="{{ route('logout') }}" method="POST">
+														@csrf
+													</form>
+												</ul>
+											</li>
+										@else
+											<!-- user -->
+											<li class="menu-item menu-item-has-children parent" >
+												<a title="My Account" href="#">My Account ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+												<ul class="submenu curency" >
+													<li class="menu-item" >
+														<a title="Dashboard" href="{{ route('user.dashboard') }}">پیشخوان</a>
+													</li>
+													<li class="menu-item" >
+														<a title="Dashboard" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
+													</li>
+													<form id="logout-form" action="{{ route('logout') }}" method="POST">
+														@csrf
+													</form>
+												</ul>
+											</li>
+										@endif
+									@else
+										<li class="menu-item" ><a title="Register or Login" href="{{ route('login') }}">ورود</a></li>
+										<li class="menu-item" ><a title="Register or Login" href="{{ route('register') }}">ثبت نام</a></li>
+									@endif
+								@endif
+
 							</ul>
 						</div>
 					</div>

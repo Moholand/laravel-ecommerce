@@ -393,15 +393,15 @@ input,textarea{
 	text-transform: capitalize;
 }
 .topbar-menu-area .topbar-menu.left-menu{
-	float: left;
-}
-.topbar-menu-area .topbar-menu.right-menu{
 	float: right;
 }
-.topbar-menu-area .topbar-menu .label-before{
-	display: inline-block;
+.topbar-menu-area .topbar-menu.right-menu{
 	float: left;
-	margin: 0 4px 0 0;
+}
+.topbar-menu-area .topbar-menu .label-before{
+	/* display: inline-block; */
+	/* float: left; */
+	margin: 0 0 0 5px;
 	padding: 0;
 }
 .topbar-menu-area .topbar-menu .label-before.icon{
