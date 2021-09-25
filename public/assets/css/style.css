@@ -2252,7 +2252,7 @@ li.menu-item .nav-label.sale-label::before{
 
 .wrap-breadcrumb ul{
     padding: 0;
-    text-align: left;
+    text-align: right;
     margin: 35px 0;
 }
 .wrap-breadcrumb ul li{
@@ -2262,18 +2262,18 @@ li.menu-item .nav-label.sale-label::before{
 }
 .wrap-breadcrumb ul li:not(:last-child)::after{
     content: '/';
-    font-size: 13px;
+    font-size: 15px;
     color: #222222;
     padding-left: 11px;
     padding-right: 11px;
 }
 .wrap-breadcrumb ul a{
-    font-size: 13px;
+    font-size: 15px;
     color: #666666;
     text-transform: uppercase;
 }
 .wrap-breadcrumb ul span{
-    font-size: 13px;
+    font-size: 15px;
     color: #222222;
     text-transform: uppercase;
 }
@@ -3025,15 +3025,15 @@ vertical-align: top;
 }
 .wrap-login-item .form-item fieldset{
     display: block;
-    float: left;
+    float: right;
     width: 100%;
     margin-bottom: 2px;
 }
 .wrap-login-item .form-item .form-title{
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19px;
     color: #333333;
-    text-align: left;
+    text-align: right;
     text-transform: uppercase;
     font-weight: 700;
     margin: 9px 0;
@@ -3042,7 +3042,7 @@ vertical-align: top;
     font-size: 14px;
     color: #666666;
     line-height: 14px;
-    text-align: left;
+    text-align: right;
     margin: 33px 0 18px 0;
     position: relative;
 }
@@ -3067,6 +3067,7 @@ vertical-align: top;
     line-height: 19px;
     padding: 0 5px 0 14px;
     color: #333333;
+    text-align: right;
 }
 .wrap-login-item .form-item input[type="text"]::-webkit-input-placeholder,
 .wrap-login-item .form-item input[type="text"]::-moz-placeholder,
@@ -3086,9 +3087,10 @@ vertical-align: top;
     font-size: 14px;
     line-height: 19px;
     color: #333333;
-    text-align: left;
+    text-align: right;
     margin: 10px 0;
     font-weight: 400;
+    width: 100%;
 }
 .wrap-login-item .form-item .link-function,
 .wrap-login-item .form-item .remember-field{
@@ -7163,4 +7165,8 @@ background-color: #888888;
 	padding-right: 40px;
 	margin-bottom: 65px;
 	padding-left: 40px;
+}
+
+.text-red-600 {
+    color: #ff2832;
 }
