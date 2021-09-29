@@ -29,18 +29,20 @@
                     <input type="email" id="frm-login-uname" name="email" placeholder="لطفا ایمیل خود را وارد نمایید" :value="old('email')" required autofocus>
                   </fieldset>
                   <fieldset class="wrap-input">
-                    <label for="frm-login-pass">Password:</label>
+                    <label for="frm-login-pass">:رمز ورود</label>
                     <input type="password" id="frm-login-pass" name="password" placeholder="************" required autocomplete="current-password">
                   </fieldset>
 
                   <fieldset class="wrap-input">
                     <label class="remember-field">
                       <input class="frm-input " name="remember" id="rememberme" value="forever"
-                        type="checkbox"><span>Remember me</span>
+                        type="checkbox"><span>مرا به خاطر بسپار</span>
                     </label>
-                    <a class="link-function left-position" href="{{ route('password.request') }}" title="Forgotten password?">Forgotten password?</a>
+                    <a class="link-function left-position" href="{{ route('password.request') }}" title="فراموشی رمز عبور؟">
+                      فراموشی رمز عبور؟
+                    </a>
                   </fieldset>
-                  <input type="submit" class="btn btn-submit" value="Login" name="submit">
+                  <input type="submit" class="btn btn-submit" value="ورود" name="submit">
                 </form>
               </div>
             </div>
