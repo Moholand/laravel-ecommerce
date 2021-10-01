@@ -3053,7 +3053,7 @@ vertical-align: top;
     width: 100%;
     position: absolute;
     top: -17px;
-    left: 0;
+    right: 0;
     background: #e6e6e6;
 }
 .wrap-login-item .form-item input[type="text"],
