@@ -54,7 +54,7 @@
                       </div>
                   </div>
                   <div class="wrap-butons">
-                      <a href="#" class="btn add-to-cart">Add to Cart</a>
+                      <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
                       <div class="wrap-btn">
                           <a href="#" class="btn btn-compare">Add Compare</a>
                           <a href="#" class="btn btn-wishlist">Add Wishlist</a>
@@ -217,12 +217,12 @@
 											<li class="product-item">
 												<div class="product product-widget-style">
 														<div class="thumbnnail">
-																<a href="{{ route('product.details', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}">
+																<a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}">
 																		<figure><img src="{{ asset('assets/images/products') }}/{{ $popular_product->image }}" alt="{{ $popular_product->name }}"></figure>
 																</a>
 														</div>
 														<div class="product-info">
-																<a href="{{ route('product.details', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}" class="product-name"><span>{{ $popular_product->name }}</span></a>
+																<a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}" class="product-name"><span>{{ $popular_product->name }}</span></a>
 																<div class="wrap-price"><span class="product-price">${{ $popular_product->regular_price }}</span></div>
 														</div>
 												</div>
@@ -240,11 +240,11 @@
               <h3 class="title-box">Related Products</h3>
               <div class="wrap-products">
                   <div class="products slide-carousel owl-carousel style-nav-1 equal-container" data-items="5" data-loop="false" data-nav="true" data-dots="false" data-responsive='{"0":{"items":"1"},"480":{"items":"2"},"768":{"items":"3"},"992":{"items":"3"},"1200":{"items":"5"}}' >
-										@foreach ($related_products as $related_product)
+					@foreach ($related_products as $related_product)
 											
                       <div class="product product-style-2 equal-elem ">
                           <div class="product-thumnail">
-                              <a href="{{ route('product.details', ['slug' => $related_product->slug]) }}" title="{{ $related_product->name }}">
+                              <a href="{{ route('detail', ['slug' => $related_product->slug]) }}" title="{{ $related_product->name }}">
                                   <figure><img src="{{ asset('assets/images/products') }}/{{ $related_product->image }}" width="214" height="214" alt="{{ $related_product->name }}"></figure>
                               </a>
                               <div class="group-flash">
@@ -255,12 +255,12 @@
                               </div>
                           </div>
                           <div class="product-info">
-                              <a href="{{ route('product.details', ['slug' => $related_product->slug]) }}" class="product-name"><span>{{ $related_product->name }}</span></a>
+                              <a href="{{ route('detail', ['slug' => $related_product->slug]) }}" class="product-name"><span>{{ $related_product->name }}</span></a>
                               <div class="wrap-price"><span class="product-price">${{ $related_product->regular_price }}</span></div>
                           </div>
                       </div>
 
-										@endforeach
+					@endforeach
                   </div>
               </div><!--End wrap-products-->
           </div>

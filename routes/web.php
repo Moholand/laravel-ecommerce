@@ -32,7 +32,7 @@ Route::get('/cart', CartComponent::class)->name('cart');
 
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 
-Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+Route::get('/product/{slug}', DetailsComponent::class)->name('detail');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
