@@ -1936,12 +1936,13 @@ li.menu-item .nav-label.sale-label::before{
     font-size: 13px;
     line-height: 20px;
     text-align: center;
+    margin-right: 10px;
 }
 .wrap-footer-content .wrap-function-info .fc-info-item .wrap-left-info .fc-name{
     font-size: 14px;
     line-height: 20px;
     color: #ffffff;
-    text-align: left;
+    text-align: right;
     text-transform: uppercase;
     font-weight: 700;
     display: block;
@@ -1958,7 +1959,6 @@ li.menu-item .nav-label.sale-label::before{
     transform: translateY(-7px);
     -webkit-transform: translateY(-7px);
     -ms-transform: translateY(-7px);
-    margin-right: 10px;
     line-height: 20px;
 }
 .wrap-footer-content .wrap-footer-item{

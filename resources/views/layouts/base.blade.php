@@ -235,38 +235,39 @@
 			<div class="wrap-function-info">
 				<div class="container">
 					<ul>
+
 						<li class="fc-info-item">
+							<div class="wrap-left-info">
+								<h4 class="fc-name">ارسال رایگان</h4>
+								<p class="fc-desc">سفارش‌های بیشتر از 200 هزار تومان</p>
+							</div>
 							<i class="fa fa-truck" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Free Shipping</h4>
-								<p class="fc-desc">Free On Oder Over $99</p>
-							</div>
-
 						</li>
+
 						<li class="fc-info-item">
+							<div class="wrap-left-info">
+								<h4 class="fc-name">گارانتی</h4>
+								<p class="fc-desc">یک ماه ضمانت</p>
+							</div>
 							<i class="fa fa-recycle" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Guarantee</h4>
-								<p class="fc-desc">30 Days Money Back</p>
-							</div>
-
 						</li>
+
 						<li class="fc-info-item">
+							<div class="wrap-left-info">
+								<h4 class="fc-name">پرداخت امن</h4>
+								<p class="fc-desc">تجربه پرداخت ایمن</p>
+							</div>
 							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-							<div class="wrap-left-info">
-								<h4 class="fc-name">Safe Payment</h4>
-								<p class="fc-desc">Safe your online payment</p>
-							</div>
-
 						</li>
+
 						<li class="fc-info-item">
-							<i class="fa fa-life-ring" aria-hidden="true"></i>
 							<div class="wrap-left-info">
-								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have Support 24/7</p>
+								<h4 class="fc-name">پشتیبانی آنلاین</h4>
+								<p class="fc-desc">پشتیبانی دو بعدی</p>
 							</div>
-
+							<i class="fa fa-life-ring" aria-hidden="true"></i>
 						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -487,7 +488,7 @@
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-	<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+	{{-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
