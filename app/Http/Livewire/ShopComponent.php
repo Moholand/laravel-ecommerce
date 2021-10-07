@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Category;
 use Livewire\WithPagination;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -41,6 +42,8 @@ class ShopComponent extends Component
             $products = Product::paginate($this->pageSize);
         }
 
-        return view('livewire.shop-component', ['products' => $products])->layout('layouts.base');
+        $categories = Category::all();
+
+        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.base');
     }
 }

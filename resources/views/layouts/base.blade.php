@@ -332,29 +332,29 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">My Account</h3>
+									<h3 class="item-header">حساب کاربری من</h3>
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">My Account</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Brands</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Gift Certificates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Affiliates</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Wish list</a></li>
+												<li class="menu-item"><a href="#" class="link-term">حساب کاربری</a></li>
+												<li class="menu-item"><a href="#" class="link-term">برند‌ها</a></li>
+												<li class="menu-item"><a href="#" class="link-term">کارت‌های هدیه</a></li>
+												<li class="menu-item"><a href="#" class="link-term">همکاری در فروش</a></li>
+												<li class="menu-item"><a href="#" class="link-term">لیست علاقه‌مندی‌ها</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
 								<div class="wrap-footer-item twin-item">
-									<h3 class="item-header">Infomation</h3>
+									<h3 class="item-header">درباره ما</h3>
 									<div class="item-content">
 										<div class="wrap-vertical-nav">
 											<ul>
-												<li class="menu-item"><a href="#" class="link-term">Contact Us</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Returns</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Site Map</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Specials</a></li>
-												<li class="menu-item"><a href="#" class="link-term">Order History</a></li>
+												<li class="menu-item"><a href="#" class="link-term">تماس با ما</a></li>
+												<li class="menu-item"><a href="#" class="link-term">دستاورد‌ها</a></li>
+												<li class="menu-item"><a href="#" class="link-term">نقشه سایت</a></li>
+												<li class="menu-item"><a href="#" class="link-term">محصولات ویژه</a></li>
+												<li class="menu-item"><a href="#" class="link-term">تاریخچه سفارشات</a></li>
 											</ul>
 										</div>
 									</div>
