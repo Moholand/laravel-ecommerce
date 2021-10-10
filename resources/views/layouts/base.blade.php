@@ -120,37 +120,7 @@
 							<a href="index.html" class="link-to-home"><img src="assets/images/logo-top-1.png" alt="mercado"></a>
 						</div>
 
-						<div class="wrap-search center-section">
-							<div class="wrap-search-form">
-								<form action="#" id="form-search-top" name="form-search-top">
-									<input type="text" name="search" value="" placeholder="Search here...">
-									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-									<div class="wrap-list-cate">
-										<input type="hidden" name="product-cate" value="0" id="product-cate">
-										<a href="#" class="link-control">All Category</a>
-										<ul class="list-cate">
-											<li class="level-0">All Category</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-										</ul>
-									</div>
-								</form>
-							</div>
-						</div>
+						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section">
 							<div class="wrap-icon-section wishlist">
@@ -306,22 +276,22 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Hot Line</h3>
+								<h3 class="item-header">پاسخگویی شبانه‌روزی</h3>
 								<div class="item-content">
 									<div class="wrap-hotline-footer">
-										<span class="desc">Call Us toll Free</span>
-										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
+										<span class="desc">تماس به صورت کاملاً رایگان</span>
+										<b class="phone-number">(021) 456 789 2 - (021) 666 888 2</b>
 									</div>
 								</div>
 							</div>
 
 							<div class="wrap-footer-item footer-item-second">
-								<h3 class="item-header">Sign up for newsletter</h3>
+								<h3 class="item-header">دریافت خبرنامه‌های جدید</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
 										<form action="#" class="frm-newletter" id="frm-newletter">
-											<input type="email" class="input-email" name="email" value="" placeholder="Enter your email address">
-											<button class="btn-submit">Subscribe</button>
+											<input type="email" class="input-email" name="email" value="" placeholder="ایمیل خود را وارد نمایید">
+											<button class="btn-submit">عضویت</button>
 										</form>
 									</div>
 								</div>

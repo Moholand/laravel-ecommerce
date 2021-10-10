@@ -1965,6 +1965,7 @@ li.menu-item .nav-label.sale-label::before{
     display: inline-block;
     margin-top: 43px;
     margin-bottom: 0;
+    float: right;
 }
 .wrap-footer-content .wrap-footer-item.twin-item{
     width: 50%;
@@ -2029,6 +2030,7 @@ li.menu-item .nav-label.sale-label::before{
     width: 100%;
     margin-top: -3px;
     margin-bottom: -5px;
+    text-align: right;
 }
 .wrap-footer-item .wrap-hotline-footer .desc{
     display: inline-block;
@@ -2054,7 +2056,7 @@ li.menu-item .nav-label.sale-label::before{
 }
 .wrap-newletter-footer input[type="email"]{
     display: inline-block;
-    width: 100%;
+    width: 74%;
     font-size: 13px;
     line-height: 13px;
     color: #888888;
@@ -2062,6 +2064,8 @@ li.menu-item .nav-label.sale-label::before{
     /*padding: 12.5px 15px;*/
     padding: 0 15px;
     height: 45px;
+    float: right;
+    text-align: right;
 }
 .wrap-newletter-footer .btn-submit{
     display: inline-block;
@@ -2071,7 +2075,7 @@ li.menu-item .nav-label.sale-label::before{
     text-transform: capitalize;
     border: none;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
     color: #ffffff;
     padding: 11.5px 19.1px;
@@ -7217,4 +7221,12 @@ svg {
 
 .wrap-pagination-info .rounded-r-md {
     margin-left: 5px;
+}
+
+.empty-result {
+    padding: 40px 10px;
+    color: #ff2832;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 }
