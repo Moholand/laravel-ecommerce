@@ -7245,4 +7245,34 @@ svg {
     font-size: 18px;
     font-weight: bold;
     padding: 5px 20px;
+    text-align: right;
+}
+
+.admin-category-edit-delete-column {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.success-message {
+    font-size:16px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.table-heading {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.table-header-button {
+    display: flex;
+}
+
+table {
+    direction: rtl;
+}
+
+table th {
+    text-align: right;
 }
