@@ -75,13 +75,16 @@
 												<a title="حساب کاربری" href="#">حساب کاربری ({{ Auth::user()->name }})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 												<ul class="submenu curency" >
 													<li class="menu-item" >
-														<a title="Dashboard" href="{{ route('admin.dashboard') }}">پیشخوان</a>
+														<a title="پیشخوان" href="{{ route('admin.dashboard') }}">پیشخوان</a>
 													</li>
 													<li class="menu-item" >
-														<a title="Categories" href="{{ route('admin.categories') }}">دسته‌ها</a>
+														<a title="دسته‌ها" href="{{ route('admin.categories') }}">دسته‌ها</a>
 													</li>
 													<li class="menu-item" >
-														<a title="Dashboard" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
+														<a title="محصولات" href="{{ route('admin.products') }}">محصولات</a>
+													</li>
+													<li class="menu-item" >
+														<a title="خروج" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
 													</li>
 													<form id="logout-form" action="{{ route('logout') }}" method="POST">
 														@csrf

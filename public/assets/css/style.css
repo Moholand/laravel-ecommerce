@@ -7202,6 +7202,10 @@ nav svg {
     height: 20px;
 }
 
+nav .hidden {
+    display: block !important;
+}
+
 svg {
     overflow: hidden;
     vertical-align: center;
@@ -7233,7 +7237,7 @@ svg {
     text-align: center;
 }
 
-.category-table-wrapper, .admin-add-category-wrapper {
+.category-table-wrapper, .admin-add-category-wrapper, .product-table-wrapper {
     padding: 30px 0;
 }
 
