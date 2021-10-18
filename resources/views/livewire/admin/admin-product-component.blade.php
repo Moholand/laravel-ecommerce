@@ -4,7 +4,16 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        تمام محصولات
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ route('admin.addproduct') }}" style="font-weight: 600" class="btn btn-success btn-sm">
+                                    محصول جدید
+                                </a>
+                            </div>
+                            <div class="col-md-6" style="text-align: right; font-size: 16px">
+                                تمام محصولات
+                            </div>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <table class="table table-striped">
@@ -30,7 +39,11 @@
                                         <td>{{ $product->regular_price }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->created_at }}</td>
-                                        <td></td>
+                                        <td>
+                                            <a href="{{ route('admin.editproduct', ['product_slug' => $product->slug]) }}">
+                                                <i class="fa fa-edit fa-2x text-info"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

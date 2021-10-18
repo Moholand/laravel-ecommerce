@@ -7280,3 +7280,7 @@ table {
 table th {
     text-align: right;
 }
+
+input, textarea, select, option {
+    text-align: right !important;
+}
