@@ -7284,3 +7284,7 @@ table th {
 input, textarea, select, option {
     text-align: right !important;
 }
+
+td, th {
+    vertical-align: middle !important;
+}

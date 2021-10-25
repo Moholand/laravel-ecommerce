@@ -84,6 +84,9 @@
 														<a title="محصولات" href="{{ route('admin.products') }}">محصولات</a>
 													</li>
 													<li class="menu-item" >
+														<a title="تنظیمات پیمایشگر اصلی" href="{{ route('admin.homeslider') }}">تنظیمات پیمایشگر اصلی</a>
+													</li>
+													<li class="menu-item" >
 														<a title="خروج" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
 													</li>
 													<form id="logout-form" action="{{ route('logout') }}" method="POST">

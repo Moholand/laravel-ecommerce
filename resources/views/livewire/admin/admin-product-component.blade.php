@@ -16,6 +16,11 @@
                         </div>
                     </div>
                     <div class="panel-body">
+                        @if(session()->has('successMessage'))
+                        <div class="alert alert-success success-message" role="alert">
+                            {{ session()->get('successMessage') }}
+                        </div>
+                        @endif
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -42,6 +47,9 @@
                                         <td>
                                             <a href="{{ route('admin.editproduct', ['product_slug' => $product->slug]) }}">
                                                 <i class="fa fa-edit fa-2x text-info"></i>
+                                            </a>
+                                            <a href="#" style="margin-right: 10px" wire:click.prevent="deleteProduct({{ $product->id }})">
+                                                <i class="fa fa-times fa-2x text-danger"></i>
                                             </a>
                                         </td>
                                     </tr>
