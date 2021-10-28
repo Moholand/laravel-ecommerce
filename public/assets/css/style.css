@@ -1595,7 +1595,7 @@ li.menu-item .nav-label.sale-label::before{
     display: inline-block;
     width: 100%;
     /*float: left;*/
-    text-align: left;
+    text-align: right;
     background-color: #ff2832;
     font-size: 14px;
     text-transform: uppercase;
@@ -1790,7 +1790,7 @@ li.menu-item .nav-label.sale-label::before{
     font-size: 13px;
     line-height: 18px;
     color: #222222;
-    text-align: left;
+    text-align: right;
     display: inline-block;
     width: 100%;
     margin-top: 5px;
