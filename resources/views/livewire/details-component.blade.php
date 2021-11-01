@@ -1,7 +1,15 @@
 <!--main area-->
 <main id="main" class="main-site">
-
-  <div class="container">
+    <style>
+        .regprice {
+            font-weight: 300;
+            font-size: 13px !important;
+            color: #aaaaaa !important;
+            text-decoration: line-through;
+            padding-left: 10px;
+        }
+    </style>
+    <div class="container">
 
     <div class="wrap-breadcrumb">
         <ul>
@@ -40,7 +48,16 @@
                   <div class="wrap-social">
                       <a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
                   </div>
-                  <div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
+
+                  @if($product->sale_price && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                    <div class="wrap-price">
+                        <span class="product-price">${{ $product->sale_price }}</span>
+                        <del><span class="product-price regprice">${{ $product->regular_price }}</span></del>
+                    </div>
+                  @else
+                    <div class="wrap-price"><span class="product-price">${{ $product->regular_price }}</span></div>
+                  @endif
+                  
                   <div class="stock-info in-stock">
                       <p class="availability">Availability: <b>{{ $product->stock_status }}</b></p>
                   </div>
@@ -54,7 +71,11 @@
                       </div>
                   </div>
                   <div class="wrap-butons">
-                      <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
+                      @if($product->sale_price && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                        <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->sale_price }})">Add to Cart</a>
+                      @else
+                        <a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
+                      @endif
                       <div class="wrap-btn">
                           <a href="#" class="btn btn-compare">Add Compare</a>
                           <a href="#" class="btn btn-wishlist">Add Wishlist</a>
@@ -213,21 +234,21 @@
               <div class="widget-content">
                   <ul class="products">
 
-										@foreach ($popular_products as $popular_product)
-											<li class="product-item">
-												<div class="product product-widget-style">
-														<div class="thumbnnail">
-																<a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}">
-																		<figure><img src="{{ asset('assets/images/products') }}/{{ $popular_product->image }}" alt="{{ $popular_product->name }}"></figure>
-																</a>
-														</div>
-														<div class="product-info">
-																<a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}" class="product-name"><span>{{ $popular_product->name }}</span></a>
-																<div class="wrap-price"><span class="product-price">${{ $popular_product->regular_price }}</span></div>
-														</div>
-												</div>
-											</li>
-										@endforeach
+                    @foreach ($popular_products as $popular_product)
+                        <li class="product-item">
+                            <div class="product product-widget-style">
+                                    <div class="thumbnnail">
+                                            <a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}">
+                                                    <figure><img src="{{ asset('assets/images/products') }}/{{ $popular_product->image }}" alt="{{ $popular_product->name }}"></figure>
+                                            </a>
+                                    </div>
+                                    <div class="product-info">
+                                            <a href="{{ route('detail', ['slug' => $popular_product->slug]) }}" title="{{ $popular_product->name }}" class="product-name"><span>{{ $popular_product->name }}</span></a>
+                                            <div class="wrap-price"><span class="product-price">${{ $popular_product->regular_price }}</span></div>
+                                    </div>
+                            </div>
+                        </li>
+                    @endforeach
                      
                   </ul>
               </div>

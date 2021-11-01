@@ -28,7 +28,8 @@
                                     <th>تصویر</th>
                                     <th>نام محصول</th>
                                     <th>موجودی</th>
-                                    <th>قیمت</th>
+                                    <th>قیمت عادی</th>
+                                    <th>قیمت در تخفیف</th>
                                     <th>دسته</th>
                                     <th>تاریخ ایجاد</th>
                                     <th></th>
@@ -42,6 +43,7 @@
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->stock_status }}</td>
                                         <td>{{ $product->regular_price }}</td>
+                                        <td>{{ $product->sale_price }}</td>
                                         <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->created_at }}</td>
                                         <td>
