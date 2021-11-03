@@ -1,5 +1,9 @@
 <div id="main" class="main-site left-sidebar">
-
+  <style>
+    .main-body {
+      display: flex;
+    }
+  </style>
   <div class="container">
 
     <div class="wrap-breadcrumb">
@@ -8,7 +12,7 @@
         <li class="item-link"><span>Digital & Electronics</span></li>
       </ul>
     </div>
-    <div class="row">
+    <div class="row main-body">
 
       <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 main-content-area">
 
@@ -130,15 +134,15 @@
           </div>
         </div><!-- brand widget-->
 
-        <div class="widget mercado-widget filter-widget price-filter">
-          <h2 class="widget-title">Price</h2>
+        <div class="widget mercado-widget filter-widget price-filter" style="margin-bottom: 50px;">
+          <h2 class="widget-title">
+            قیمت
+            <span class="text-info">{{ $max_price }} - {{ $min_price }}</span>
+          </h2>
           <div class="widget-content">
-            <div id="slider-range"></div>
-            <p>
-              <label for="amount">Price:</label>
-              <input type="text" id="amount" readonly>
-              <button class="filter-submit">Filter</button>
-            </p>
+            <div id="slider" wire:ignore>
+
+            </div>
           </div>
         </div><!-- Price-->
 
@@ -245,3 +249,27 @@
   <!--end container-->
 
 </div>
+
+@push('scripts')
+  <script>
+    var slider = document.getElementById('slider');
+    noUiSlider.create(slider, {
+      start: [1, 1000],
+      connect: true,
+      range: {
+        'min': 1,
+        'max': 1000
+      },
+      pips: {
+        mode: 'steps',
+        stepped: true,
+        dnsity: 4,
+      },
+    });
+
+    slider.noUiSlider.on('update', function(value) {
+      @this.set('min_price', value[0]);
+      @this.set('max_price', value[1]);
+    });
+  </script>
+@endpush

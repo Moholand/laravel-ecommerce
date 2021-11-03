@@ -23,42 +23,49 @@
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="نام محصول" class="form-control input-md" wire:model="name" wire:keyup="generateSlug">
+                                    @error('name') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">نام محصول</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="اسلاگ محصول" class="form-control input-md" wire:model="slug">
+                                    @error('slug') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">اسلاگ محصول</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <textarea class="form-control" placeholder="توضیح مختصر" cols="30" rows="10" wire:model="short_description"></textarea>
+                                    @error('short_description') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">توضیح مختصر</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px"> 
                                 <div class="col-md-4">
                                     <textarea class="form-control" placeholder="توضیحات" cols="30" rows="10" wire:model="description"></textarea>
+                                    @error('description') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">توضیحات</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="قیمت" class="form-control input-md" wire:model="regular_price">
+                                    @error('regular_price') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">قیمت</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="قیمت در تخفیف" class="form-control input-md" wire:model="sale_price">
+                                    @error('sale_price') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">قیمت در تخفیف</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="SKU" class="form-control input-md" wire:model="SKU">
+                                    @error('SKU') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">SKU</label>
                             </div>
@@ -68,6 +75,7 @@
                                         <option value="instock">موجود</option>
                                         <option value="outofstock">ناموجود</option>
                                     </Select>
+                                    @error('stock_status') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">موجودی</label>
                             </div>
@@ -83,12 +91,14 @@
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="text" placeholder="تعداد" class="form-control input-md" wire:model="quantity">
+                                    @error('quantity') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">تعداد</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="image">
+                                    @error('image') <p class="text-danger">{{ $message }}</p>  @enderror
                                     @if($image)
                                         <img src="{{ $image->temporaryURL() }}" width="120">
                                     @endif
@@ -103,6 +113,7 @@
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                         @endforeach
                                     </Select>
+                                    @error('category_id') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">دسته</label>
                             </div>

@@ -2487,7 +2487,7 @@ li.menu-item .nav-label.sale-label::before{
     text-transform: uppercase;
     margin: 0;
     width: 100%;
-    text-align: left;
+    text-align: right;
     border-bottom: 1px solid #e6e6e6;
     padding-bottom: 19px;
     margin-bottom: 18px;
