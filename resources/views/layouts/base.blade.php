@@ -145,8 +145,13 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-heart" aria-hidden="true"></i>
 									<div class="left-info">
-										<span class="index">0 item</span>
-										<span class="title">Wishlist</span>
+										@if(Cart::instance('wishlist')->count() > 0)
+											<span class="index" style="display:flex; flex-direction:row-reverse; justify-content: space-between;">
+												<span>{{ Cart::instance('wishlist')->count() }}</span>
+												<span>محصول</span>
+											</span>
+										@endif
+										<span class="title">علاقه‌مندی‌ها</span>
 									</div>
 								</a>
 							</div>
@@ -154,8 +159,8 @@
 								<a href="#" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-										@if(Cart::count() > 0)
-										<span class="index">{{ Cart::count() }} items</span>
+										@if(Cart::instance('cart')->count() > 0)
+										<span class="index">{{ Cart::instance('cart')->count() }} items</span>
 										@endif
 										<span class="title">CART</span>
 									</div>
@@ -485,6 +490,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js" integrity="sha512-ZKqmaRVpwWCw7S7mEjC89jDdWRD/oMS0mlfH96mO0u3wrPYoN+lXmqvyptH4P9mY6zkoPTSy5U2SwKVXRY5tYQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.tiny.cloud/1/w4nq0g28v7aam89j35nam3m3lrjhm5zgrnbryc5vvwmft8vx/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   @livewireScripts
 	@stack('scripts')
 </body>

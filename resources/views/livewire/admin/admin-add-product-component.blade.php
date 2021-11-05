@@ -35,15 +35,15 @@
                                 <label for="" class="col-md-4 form-label">اسلاگ محصول</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px">
-                                <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="توضیح مختصر" cols="30" rows="10" wire:model="short_description"></textarea>
+                                <div class="col-md-4" wire:ignore>
+                                    <textarea class="form-control" id="short_description" placeholder="توضیح مختصر" cols="30" rows="10" wire:model="short_description"></textarea>
                                     @error('short_description') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">توضیح مختصر</label>
                             </div>
                             <div class="form-group" style="display: flex; justify-content: center; align-items: center; margin-bottom: 20px"> 
-                                <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="توضیحات" cols="30" rows="10" wire:model="description"></textarea>
+                                <div class="col-md-4" wire:ignore>
+                                    <textarea class="form-control" id="description" placeholder="توضیحات" cols="30" rows="10" wire:model="description"></textarea>
                                     @error('description') <p class="text-danger">{{ $message }}</p>  @enderror
                                 </div>
                                 <label for="" class="col-md-4 form-label">توضیحات</label>
@@ -130,3 +130,31 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        // $(function() {
+        //     tinymce.init({
+        //         selector: '#short_description',
+        //         setup: function(editor) {
+        //             editor.on('change', function() {
+        //                 tinyMCE.triggerSave();
+        //                 var sd_data = $('#short_description').val();
+        //                 @this.set('short_description', sd_data);
+        //             });
+        //         }
+        //     });
+
+        //     tinymce.init({
+        //         selector: '#description',
+        //         setup: function(editor) {
+        //             editor.on('change', function() {
+        //                 tinyMCE.triggerSave();
+        //                 var d_data = $('#description').val();
+        //                 @this.set('description', d_data);
+        //             });
+        //         }
+        //     });
+        // });
+    </script>
+@endpush
