@@ -96,6 +96,9 @@
 														<a title="تنظیمات تخفیف " href="{{ route('admin.sale') }}">تنظیمات تخفیف</a>
 													</li>
 													<li class="menu-item" >
+														<a title="کوپن تخفیف " href="{{ route('admin.coupons') }}">کوپن تخفیف</a>
+													</li>
+													<li class="menu-item" >
 														<a title="خروج" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">خروج</a>
 													</li>
 													<form id="logout-form" action="{{ route('logout') }}" method="POST">

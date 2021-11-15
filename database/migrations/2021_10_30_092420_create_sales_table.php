@@ -13,12 +13,14 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
-            $table->id();
-            $table->dateTime('sale_date');
-            $table->boolean('status');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('sales')){
+            Schema::create('sales', function (Blueprint $table) {
+                $table->id();
+                $table->dateTime('sale_date');
+                $table->boolean('status');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

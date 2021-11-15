@@ -14,7 +14,7 @@
       <div class="wrap-iten-in-cart">
         @if(Session::has('success_message'))
           <div class="alert alert-success">
-            <strong> Success </strong> {{ Session::get('success_message') }}
+            {{ Session::get('success_message') }}
           </div>
         @endif
         @if(Cart::instance('cart')->count() > 0)
@@ -38,6 +38,7 @@
                     <a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity('{{ $item->rowId }}')"></a>
                     <a class="btn btn-reduce" href="#" wire:click.prevent="decreaseQuantity('{{ $item->rowId }}')"></a>
                   </div>
+                  <p class="text-center"><a href="#" wire:click.prevent="switchToSaveForLater('{{ $item->rowId }}')">ذخیره در لیست خرید</a></p>
                 </div>
                 <div class="price-field sub-total">
                   <p class="price">${{ $item->subtotal }}</p>
@@ -61,15 +62,45 @@
         <div class="order-summary">
           <h4 class="title-box">Order Summary</h4>
           <p class="summary-info"><span class="title">Subtotal</span><b class="index">${{ Cart::instance('cart')->subtotal() }}</b></p>
-          <p class="summary-info"><span class="title">Tax</span><b class="index">${{ Cart::instance('cart')->tax() }}</b></p>
-          <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
-          <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ Cart::instance('cart')->total() }}</b></p>
+          @if(session()->has('coupon'))
+            <p class="summary-info"><span class="title">Discount ({{ session('coupon')['code'] }})</span><b class="index">${{ $discount }}</b></p>
+            <p class="summary-info"><span class="title">Subtotal with Discount</span><b class="index">${{ $subtotalAfterDiscount }}</b></p>
+            <p class="summary-info"><span class="title">Tax ({{ config('cart.tax') }}%)</span><b class="index">${{ $taxAfterDiscount }}</b></p>
+            <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ $totalAfterDiscount }}</b></p>
+          @else
+            <p class="summary-info"><span class="title">Tax</span><b class="index">${{ Cart::instance('cart')->tax() }}</b></p>
+            <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
+            <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ Cart::instance('cart')->total() }}</b></p>
+          @endif    
         </div>
         <div class="checkout-info">
+          @if(!session()->has('coupon'))
           <label class="checkbox-field">
-            <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo
-              code</span>
+            <input class="frm-input " name="have-code" id="have-code" value="1" type="checkbox" wire:model="haveCouponCode">
+            <span>
+              من کوپن دارم
+            </span>
           </label>
+          @if($haveCouponCode)
+          <div class="summary-item">
+            <form action="">
+              <h4 class="title-box">
+                کد کوپن
+              </h4>
+              @if(session()->has('couponMessage'))
+              <div class="alert alert-danger" role="danger">
+                {{ session()->get('couponMessage') }}
+              </div>
+              @endif
+              <p class="row-in-form">
+                <label for="coupon-code">لطفا کد کوپن خود را وارد نمایید:</label>
+                <input type="text" name="coupon-code" wire:model="couponCode">
+              </p>
+              <button type="submit" class="btn btn-small">اعمال</button>
+            </form>
+          </div>
+          @endif
+          @endif
           <a class="btn btn-checkout" href="checkout.html">Check out</a>
           <a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right"
               aria-hidden="true"></i></a>
@@ -78,6 +109,50 @@
           <a class="btn btn-clear" href="#" wire:click.prevent="destroyAll()">Clear Shopping Cart</a>
           <a class="btn btn-update" href="#">Update Shopping Cart</a>
         </div>
+      </div>
+
+      <div class="wrap-iten-in-cart">
+        <h3 class="title-box" style="border-bottom: 1px solid; padding-bottom: 15px; ">
+          <span>ذخیره برای آینده</span>
+          <span>{{ Cart::instance('saveForLater')->count() }}</span>
+          <span>محصول</span>
+        </h3>
+        @if(Session::has('s_success_message'))
+          <div class="alert alert-success">
+            {{ Session::get('s_success_message') }}
+          </div>
+        @endif
+        @if(Cart::instance('saveForLater')->count() > 0)
+          <h3 class="box-title">Products Name</h3>
+          <ul class="products-cart">
+
+            @foreach(Cart::instance('saveForLater')->content() as $item)
+              <li class="pr-cart-item">
+                <div class="product-image">
+                  <figure><img src="{{ asset('assets/images/products') }}/{{ $item->model->image }}" alt="{{ $item->model->name }}"></figure>
+                </div>
+                <div class="product-name">
+                  <a class="link-to-product" href="{{ route('detail', ['slug' => $item->model->slug]) }}">{{ $item->model->name }}</a>
+                </div>
+                <div class="price-field produtc-price">
+                  <p class="price">${{ $item->model->regular_price }}</p>
+                </div>
+                <div class="quantity">
+                  <p class="text-center"><a href="#" wire:click.prevent="moveToCart('{{ $item->rowId }}')">انتقال به سبد خرید</a></p>
+                </div>
+                <div class="delete">
+                  <a href="#" class="btn btn-delete" title="" wire:click.prevent="deleteFromSaveForLater('{{ $item->rowId }}')">
+                    <span>حذف از لیست خرید آینده</span>
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </li>
+            @endforeach
+
+          </ul>
+        @else
+          <p>محصولی در لیست خرید برای آینده وجود ندارد</p?
+        @endif
       </div>
 
       <div class="wrap-show-advance-info-box style-1 box-in-site">
