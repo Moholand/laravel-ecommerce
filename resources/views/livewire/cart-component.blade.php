@@ -63,10 +63,10 @@
           <h4 class="title-box">Order Summary</h4>
           <p class="summary-info"><span class="title">Subtotal</span><b class="index">${{ Cart::instance('cart')->subtotal() }}</b></p>
           @if(session()->has('coupon'))
-            <p class="summary-info"><span class="title">Discount ({{ session('coupon')['code'] }})</span><b class="index">${{ $discount }}</b></p>
-            <p class="summary-info"><span class="title">Subtotal with Discount</span><b class="index">${{ $subtotalAfterDiscount }}</b></p>
-            <p class="summary-info"><span class="title">Tax ({{ config('cart.tax') }}%)</span><b class="index">${{ $taxAfterDiscount }}</b></p>
-            <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ $totalAfterDiscount }}</b></p>
+            <p class="summary-info"><span class="title">Discount ({{ session('coupon')['code'] }}) <a><i class="fa fa-times text-danger"></i></a></span><b class="index"> -${{ number_format($discount, 2) }}</b></p>
+            <p class="summary-info"><span class="title">Subtotal with Discount</span><b class="index">${{ number_format($subtotalAfterDiscount, 2) }}</b></p>
+            <p class="summary-info"><span class="title">Tax ({{ config('cart.tax') }}%)</span><b class="index">${{ number_format($taxAfterDiscount, 2) }}</b></p>
+            <p class="summary-info total-info "><span class="title">Total</span><b class="index">${{ number_format($totalAfterDiscount, 2) }}</b></p>
           @else
             <p class="summary-info"><span class="title">Tax</span><b class="index">${{ Cart::instance('cart')->tax() }}</b></p>
             <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
@@ -83,7 +83,7 @@
           </label>
           @if($haveCouponCode)
           <div class="summary-item">
-            <form action="">
+            <form wire:submit.prevent="applyCouponCode">
               <h4 class="title-box">
                 کد کوپن
               </h4>

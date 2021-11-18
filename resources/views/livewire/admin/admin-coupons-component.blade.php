@@ -26,6 +26,7 @@
                                     <th>کد کوپن</th>
                                     <th>نوع کوپن</th>
                                     <th>مقدار کوپن</th>
+                                    <th>زمان انقضاء</th>
                                     <th>مقدار سبد خرید</th>
                                     <th></th>
                                 </tr>
@@ -41,6 +42,7 @@
                                         @else 
                                             <td>{{ $coupon->value }} %</td>
                                         @endif
+                                        <td>{{ $coupon->expiry_date }}</td>
                                         <td>{{ $coupon->cart_value }}</td>
                                         <td class="admin-category-edit-delete-column">
                                             <a href="{{ route('admin.editcoupon', ['coupon_id' => $coupon->id]) }}">

@@ -61,6 +61,13 @@
                                 <label class="col-md-4 control-label">مقدار خرید</label>
                             </div>
                             <div class="form-group">
+                                <div class="col-md-4" wire:ignore>
+                                    <input type="text" id="expiry-date" placeholder="تاریخ انتقضاء" class="form-control input-md" wire:model="expiry_date">
+                                    @error('expiry_date') <p class="text-danger">{{ $message }}</p>  @enderror
+                                </div>
+                                <label class="col-md-4 control-label">تاریخ انتقضاء</label>
+                            </div>
+                            <div class="form-group">
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">افزودن کوپن</button>
                                 </div>
@@ -73,3 +80,17 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('#expiry-date').datetimepicker({
+                format: 'Y-MM-DD '
+            })
+            .on('db.change', function(ev) {
+                var data = $('#expiry-date').val();
+                @this.set('expiry-date', data);
+            });
+        });
+    </script>
+@endpush
